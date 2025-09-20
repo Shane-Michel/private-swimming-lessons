@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import './Header.css'
 import { useEffect } from 'react';
+import Picture from '../Picture';
+import { sharedImages } from '../../imageSources';
 
 const Header = () => {
 
@@ -12,8 +14,16 @@ const Header = () => {
 
   return (
     <header>
-      <img className='signature' src="/images/cMitchellHeader-noBG-H100.png" alt="signature" />
-      <img className='logo' src="/images/freshlogo.png" alt="logo" />
+      <Picture
+        sources={sharedImages.headerSignature}
+        alt="signature"
+        imgProps={{ className: 'signature', loading: 'eager' }}
+      />
+      <Picture
+        sources={sharedImages.headerLogo}
+        alt="logo"
+        imgProps={{ className: 'logo', loading: 'eager' }}
+      />
         <nav>
             <ul>
                 <li><div className="fb-share-button" data-href="https://www.facebook.com/professionalprivatelearning" data-layout="button_count"></div></li>

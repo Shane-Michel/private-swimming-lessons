@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Picture from './Picture'
+import { sharedImages } from '../imageSources'
 
 const BottomSection = () => {
 
@@ -46,10 +48,10 @@ const BottomSection = () => {
         <section id="contact">
           <div className="content3">
             <div className="headshot-container">
-              <img
-                className="headshot"
-                src="/images/headshot.png"
+              <Picture
+                sources={sharedImages.headshot}
                 alt="headshot"
+                imgProps={{ className: 'headshot', loading: 'lazy' }}
               />
               <h2>Contact Us</h2>
             </div>

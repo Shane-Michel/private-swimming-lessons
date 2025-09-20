@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './ContactPage.css';
+import Picture from '../../Components/Picture';
+import { sharedImages } from '../../imageSources';
 
 const ContactPage = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -36,13 +38,21 @@ const ContactPage = () => {
       <section id="contact">
         <div className="content3">
           <div className="headshot-container">
-            <img className="headshot" src="/images/headshot.png" alt="headshot" />
+            <Picture
+              sources={sharedImages.headshot}
+              alt="headshot"
+              imgProps={{ className: 'headshot', loading: 'eager' }}
+            />
             <h2>Contact Us</h2>
           </div>
           {formSubmitted ? (
             <div className="thank-you-message">
               <p>Thank you for contacting us. Your message has been sent!</p>
-              <img className="contact-card" src="/images/contact-card.jpeg" alt="business card" />
+              <Picture
+                sources={sharedImages.contactCard}
+                alt="business card"
+                imgProps={{ className: 'contact-card', loading: 'lazy' }}
+              />
             </div>
           ) : (
             <div className="form-contact-card">
@@ -59,7 +69,11 @@ const ContactPage = () => {
                 <button type="submit">Submit</button>
                 {error && <p className="error-message">{error}</p>}
               </form>
-              <img className="contact-card" src="/images/contact-card.jpeg" alt="business card" />
+              <Picture
+                sources={sharedImages.contactCard}
+                alt="business card"
+                imgProps={{ className: 'contact-card', loading: 'lazy' }}
+              />
             </div>
           )}
         </div>
