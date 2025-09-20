@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
-import './Homepage.css'
+import './HomePage.css'
 import { useEffect } from 'react';
+import Picture from '../../Components/Picture'
+import { sharedImages } from '../../imageSources'
 
 const HomePage = () => {
 
@@ -14,12 +16,20 @@ const HomePage = () => {
     <main>
 
         <section className='home'>
-            <img src="/images/private-swimming-lessons-instructors.jpg" alt="intructors" />
+            <Picture
+              sources={sharedImages.instructors}
+              alt="instructors"
+              imgProps={{ loading: 'eager' }}
+            />
             <div className='hero'>
                 <h2>Private Swimming Lessons</h2>
                 <p>Learn to swim confidently with our experienced instructors.</p>
             </div>
-            <img src="/images/pool.jpg" alt="pool" />
+            <Picture
+              sources={sharedImages.pool}
+              alt="pool"
+              imgProps={{ loading: 'lazy' }}
+            />
         </section>
 
         <section className='about'>
@@ -95,7 +105,11 @@ const HomePage = () => {
             <section id='contact'>
                 <div className="content3">
                     <div className="headshot-container">
-                        <img className='headshot' src="/images/headshot.png" alt="headshot" />
+                        <Picture
+                          sources={sharedImages.headshot}
+                          alt="headshot"
+                          imgProps={{ className: 'headshot', loading: 'lazy' }}
+                        />
                         <h2>Contact Us</h2>
                     </div>
                     <p>For inquiries and bookings call <strong>Christin</strong> at <strong>706-540-7810</strong> or <strong><a href="mailto:cmswimminglessons@gmail.com">cmswimminglessons@gmail.com</a></strong>.</p>
