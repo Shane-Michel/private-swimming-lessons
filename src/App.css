@@ -1,0 +1,140 @@
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(11, 33, 47);
+  --blue: rgb(55, 108, 136);
+  --bannerBlue: rgb(84, 164, 202);
+  --darkBlue: rgb(1, 96, 137);
+  --darkBannerBlue: rgb(31, 66, 85);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  background-color: var(--black);
+}
+
+h1, h2, h3 {
+  text-shadow: 2px 2px 3px #333;
+}
+
+.form-contact-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-card {
+  height: auto;
+  width: 50%;
+}
+
+#contact form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#contact form textarea {
+  resize: vertical;
+  height: 150px; /* Adjust the height as needed */
+}
+
+#contact form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact form button[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* media queries */
+@media only screen and (max-width: 1025px) {
+  #home img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo {
+    height: auto;
+    width: 200px;
+  }
+
+  .hero {
+    margin: 8px;
+    padding: 1rem;
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .logo {
+    height: auto;
+    width: 150px;
+  }
+  .hero {
+    width: auto;
+  }
+  
+  .contact-card {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .signature {
+    display: none;
+  }
+
+  .logo {
+    height: auto;
+    width: 300px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+  .review-card{
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  nav ul li {
+    margin-right: 0.1rem;
+  }
+  .logo {
+    height: auto;
+    width: 200px;
+  }
+}

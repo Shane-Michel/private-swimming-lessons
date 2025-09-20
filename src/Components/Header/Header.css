@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background-color: var(--black);
+    color: #fff;
+    padding: 1rem;
+}
+  
+.logo {
+    height: 200px;
+    width: 300px;
+}
+  
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+  
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+  
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.fb-share-button {
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width: 780px) {
+    header {
+        flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}
