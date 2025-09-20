@@ -1,7 +1,48 @@
-#videos-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 1rem;
+.videos-page {
+  padding-top: 4rem;
+}
+
+.videos-container {
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin: 0 auto 5rem auto;
+}
+
+.videos-header {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto 3rem auto;
+}
+
+.videos-header h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.video-card {
+  padding: 1.5rem;
+  background: linear-gradient(160deg, rgba(16, 33, 54, 0.95), rgba(11, 28, 46, 0.9));
+}
+
+.video-card iframe {
+  width: 100%;
+  max-width: 320px;
+}
+
+@media (max-width: 900px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .videos-container {
+    width: min(var(--max-width), calc(100% - 2rem));
+  }
 }
