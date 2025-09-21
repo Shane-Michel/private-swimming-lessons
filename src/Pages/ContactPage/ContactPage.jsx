@@ -1,5 +1,12 @@
+
 import { useState } from 'react'
 import './ContactPage.css'
+
+import { useState } from 'react';
+import './ContactPage.css';
+import Picture from '../../Components/Picture';
+import { sharedImages } from '../../imageSources';
+
 
 const ContactPage = () => {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -31,6 +38,7 @@ const ContactPage = () => {
   }
 
   return (
+
     <main className='contact-page'>
       <section className='contact-hero card'>
         <span className='tagline'>Start your swim journey</span>
@@ -51,6 +59,27 @@ const ContactPage = () => {
                 <source srcSet='/generated/contact-card.webp' type='image/webp' />
                 <img src='/images/contact-card.jpeg' alt='Christin Mitchell contact card' />
               </picture>
+
+    <main>
+      <section id="contact">
+        <div className="content3">
+          <div className="headshot-container">
+            <Picture
+              sources={sharedImages.headshot}
+              alt="headshot"
+              imgProps={{ className: 'headshot', loading: 'eager' }}
+            />
+            <h2>Contact Us</h2>
+          </div>
+          {formSubmitted ? (
+            <div className="thank-you-message">
+              <p>Thank you for contacting us. Your message has been sent!</p>
+              <Picture
+                sources={sharedImages.contactCard}
+                alt="business card"
+                imgProps={{ className: 'contact-card', loading: 'lazy' }}
+              />
+
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
@@ -64,9 +93,21 @@ const ContactPage = () => {
               <label htmlFor='message'>How can we help?</label>
               <textarea id='message' name='message' rows='5' placeholder='Tell us about your goals or swimmer' required></textarea>
 
+
               <button className='cta-button' type='submit'>Submit message</button>
               {error && <p className='error-message'>{error}</p>}
             </form>
+
+                <button type="submit">Submit</button>
+                {error && <p className="error-message">{error}</p>}
+              </form>
+              <Picture
+                sources={sharedImages.contactCard}
+                alt="business card"
+                imgProps={{ className: 'contact-card', loading: 'lazy' }}
+              />
+            </div>
+
           )}
         </section>
 

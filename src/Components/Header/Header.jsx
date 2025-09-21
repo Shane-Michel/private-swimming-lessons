@@ -2,12 +2,18 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Header.css'
 
+
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/reviews', label: 'Reviews' },
   { to: '/videos', label: 'Videos' },
   { to: '/contact', label: 'Contact' },
 ]
+
+import { useEffect } from 'react';
+import Picture from '../Picture';
+import { sharedImages } from '../../imageSources';
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -19,6 +25,7 @@ const Header = () => {
   }, [])
 
   return (
+
     <header className={`site-header${menuOpen ? ' nav-open' : ''}`}>
       <div className='header-inner'>
         <Link to='/' className='brand' onClick={() => setMenuOpen(false)}>
@@ -57,6 +64,27 @@ const Header = () => {
               </li>
             ))}
           </ul>
+
+    <header>
+      <Picture
+        sources={sharedImages.headerSignature}
+        alt="signature"
+        imgProps={{ className: 'signature', loading: 'eager' }}
+      />
+      <Picture
+        sources={sharedImages.headerLogo}
+        alt="logo"
+        imgProps={{ className: 'logo', loading: 'eager' }}
+      />
+        <nav>
+            <ul>
+                <li><div className="fb-share-button" data-href="https://www.facebook.com/professionalprivatelearning" data-layout="button_count"></div></li>
+                <li><Link to={'/'} >Home</Link></li>
+                <li><Link to={'/reviews'} >Reviews</Link></li>
+                <li><Link to={'/videos'} >Videos</Link></li>
+                <li><Link to={'/contact'} >Contact</Link></li>
+            </ul>
+
         </nav>
 
         <a className='header-cta cta-button' href='tel:17065407810'>
