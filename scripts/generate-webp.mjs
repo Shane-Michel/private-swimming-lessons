@@ -2,6 +2,7 @@ import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
 
+
 const SOURCE_DIR = path.resolve('public/images')
 const OUTPUT_DIR = path.resolve('public/generated')
 const VALID_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png'])
