@@ -9,6 +9,7 @@
     "dev": "vite",
     "prebuild": "npm run images:generate",
     "build": "vite build",
+    "deploy": "npm run build && wsl rsync -avz --chmod=F644,D755 dist/ michelco@michelcollective.com:/home/michelco/private-swimming-lessons.com/",
     "lint": "eslint .",
     "prepreview": "npm run images:generate",
     "preview": "vite preview"
