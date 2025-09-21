@@ -1,8 +1,26 @@
-# React + Vite
+# Private Swimming Lessons — React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project powers the marketing site for Christin Mitchell&apos;s private swimming lessons. It runs on Vite with React 19 and client-side routing provided by `react-router-dom`.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
+
+The development server automatically generates optimized WebP variants for every JPG/PNG located in `public/images` before it starts.
+
+## Building for production
+
+```bash
+npm run build
+```
+
+The `prebuild` step recreates fresh WebP assets in `public/generated/` using [Sharp](https://sharp.pixelplumbing.com/). These generated files are ignored by Git and copied into the Vite output during the build so that `<picture>` elements can reference them without tracking binary blobs in source control.
+
+You can manually refresh the optimized media at any time with:
+
+```bash
+npm run images:generate
+```

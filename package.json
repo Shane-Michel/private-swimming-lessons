@@ -4,9 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "images:generate": "node scripts/generate-webp.mjs",
+    "predev": "npm run images:generate",
     "dev": "vite",
+    "prebuild": "npm run images:generate",
     "build": "vite build",
     "lint": "eslint .",
+    "prepreview": "npm run images:generate",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -27,6 +31,10 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
     "vite": "^6.1.0",
+
+    "sharp": "^0.33.5"
+
     "vite-imagetools": "^8.0.0"
+
   }
 }
