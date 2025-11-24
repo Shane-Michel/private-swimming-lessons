@@ -5,6 +5,9 @@ import './Header.css'
 import Picture from '../Picture'
 import { sharedImages } from '../../imageSources'
 
+const intakeFormUrl =
+  'https://docs.google.com/forms/d/e/1FAIpQLSex1pVa3WmbS62vVUJznrW8e88LBcdmuEEHlVkMfxtyUQpK0Q/viewform?usp=sharing&ouid=104839911067234881769'
+
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/reviews', label: 'Reviews' },
@@ -63,9 +66,14 @@ const Header = () => {
           </ul>
         </nav>
 
-        <a className='header-cta cta-button' href='tel:17065407810'>
-          <span>Call Christin</span>
-        </a>
+        <div className='header-actions'>
+          <a className='header-cta cta-button' href='tel:17065407810'>
+            <span>Call Christin</span>
+          </a>
+          <a className='header-cta cta-button' href={intakeFormUrl} target='_blank' rel='noreferrer'>
+            <span>Intake Form</span>
+          </a>
+        </div>
       </div>
     </header>
   )

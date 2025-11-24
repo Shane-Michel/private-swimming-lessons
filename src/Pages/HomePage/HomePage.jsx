@@ -22,6 +22,9 @@ const testimonialHighlights = [
   },
 ]
 
+const intakeFormUrl =
+  'https://docs.google.com/forms/d/e/1FAIpQLSex1pVa3WmbS62vVUJznrW8e88LBcdmuEEHlVkMfxtyUQpK0Q/viewform?usp=sharing&ouid=104839911067234881769'
+
 const HomePage = () => {
   return (
     <main className='home-page'>
@@ -36,10 +39,12 @@ const HomePage = () => {
           <ul className='hero-highlights'>
             <li>Tailored lessons for every age and ability level</li>
             <li>Breakthrough coaching that conquers fear &amp; builds confidence</li>
-            <li>Flexible scheduling at your home or community pool</li>
+            <li>To book lessons, please complete the Intake Form</li>
           </ul>
           <div className='hero-actions'>
-            <Link className='cta-button' to='/contact'>Book a lesson</Link>
+            <a className='cta-button' href={intakeFormUrl} target='_blank' rel='noreferrer'>
+              Intake Form
+            </a>
             <Link className='secondary-link' to='/reviews'>Read success stories</Link>
           </div>
         </div>
@@ -140,11 +145,18 @@ const HomePage = () => {
         <div className='cta-content'>
           <div>
             <h2>Ready to dive in?</h2>
-            <p>Contact Christin to design a lesson plan around your goals and schedule.</p>
+            <p>Contact Christin for general questions.</p>
+            <p>
+              Complete the intake form to provide Christin pertinent information to design a lesson plan around your goals and
+              schedule.
+            </p>
           </div>
           <div className='cta-actions'>
             <a className='cta-button' href='tel:17065407810'>Call 706-540-7810</a>
             <Link className='secondary-link' to='/contact'>Send a message</Link>
+            <a className='cta-button' href={intakeFormUrl} target='_blank' rel='noreferrer'>
+              Intake Form
+            </a>
           </div>
         </div>
       </section>
