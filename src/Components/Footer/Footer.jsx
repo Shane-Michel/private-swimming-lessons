@@ -37,6 +37,9 @@ const Footer = () => {
       </div>
       <div className='footer-bottom'>
         <p>&copy; {currentYear} Christin Mitchell&apos;s Private Swimming Lessons. All rights reserved.</p>
+        <p>
+          <a href='https://smws.us'>Hosted, designed, managed, and cared for by SMWS</a>
+        </p>
       </div>
     </footer>
   )

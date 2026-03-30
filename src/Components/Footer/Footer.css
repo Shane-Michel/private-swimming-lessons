@@ -76,6 +76,14 @@
   border-top: 1px solid var(--border-subtle);
 }
 
+.footer-bottom a {
+  color: var(--text-secondary);
+}
+
+.footer-bottom a:hover {
+  color: var(--text-primary);
+}
+
 @media (max-width: 900px) {
   .footer-inner {
     width: min(var(--max-width), calc(100% - 2rem));
