@@ -6,10 +6,12 @@ import Footer from './Components/Footer/Footer'
 import ContactPage from './Pages/ContactPage/ContactPage'
 import ReviewsPage from './Pages/ReviewsPage/ReviewsPage'
 import VideosPage from './Pages/VideosPage/VideosPage'
+import SeoManager from './Components/SeoManager'
 
 function App() {
   return (
     <BrowserRouter>
+      <SeoManager />
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />

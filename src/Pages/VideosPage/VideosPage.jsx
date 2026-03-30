@@ -2,10 +2,22 @@ import BottomSection from '../../Components/BottomSection'
 import './VideosPage.css'
 
 const videos = [
-  'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/professionalprivatelearning/videos/932123924777574&mute=1',
-  'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kreal514/videos/10211548753146306&mute=1',
-  'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/1511873867/videos/pcb.10221956214403759/1318941162077501&mute=1',
-  'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/professionalprivatelearning/videos/1885181455168360&mute=1',
+  {
+    src: 'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/professionalprivatelearning/videos/932123924777574&mute=1',
+    title: 'Student breakthrough during private swimming lesson video 1',
+  },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kreal514/videos/10211548753146306&mute=1',
+    title: 'Student breakthrough during private swimming lesson video 2',
+  },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/1511873867/videos/pcb.10221956214403759/1318941162077501&mute=1',
+    title: 'Student breakthrough during private swimming lesson video 3',
+  },
+  {
+    src: 'https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/professionalprivatelearning/videos/1885181455168360&mute=1',
+    title: 'Student breakthrough during private swimming lesson video 4',
+  },
 ]
 
 const VideosPage = () => {
@@ -19,7 +31,7 @@ const VideosPage = () => {
         </header>
 
         <div className='videos-grid'>
-          {videos.map((src) => (
+          {videos.map(({ src, title }) => (
             <div className='video-card card' key={src}>
               <iframe
                 src={src}
@@ -31,7 +43,7 @@ const VideosPage = () => {
                 allow='autoplay; clipboard-write; encrypted-media; picture-in-picture'
                 allowFullScreen
                 loading='lazy'
-                title={src}
+                title={title}
               ></iframe>
             </div>
           ))}
